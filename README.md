@@ -4,7 +4,7 @@ DOWNLORD APK : https://drive.google.com/drive/folders/1vDP7FuPMrxi-Bu7yUTW98yZRi
 
 This is an Ecommerce App 
 
-1 > Home Screen of the App : 
+1 > Home Screen of the App :  Click on item to add to cart
 
 ![WhatsApp Image 2022-11-06 at 11 42 12 PM](https://user-images.githubusercontent.com/103873587/200187759-832bc1d5-e578-4672-bb22-5afc81a8a86b.jpeg)
 
