@@ -35,6 +35,7 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
         setContentView(viewBinding.getRoot());
 
         List<imageModel> items = new ArrayList<>();
+        RecyclerView recyclerView = viewBinding.ecomRecyclerView;
 
         items.add(new imageModel(R.drawable.camera,112,"Camera"));
         items.add(new imageModel(R.drawable.nuts,132,"Nuts"));
@@ -42,7 +43,7 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
         items.add(new imageModel(R.drawable.cashews,142,"Cashews"));
         items.add(new imageModel(R.drawable.popcon,112,"Popcorn"));
 
-        RecyclerView recyclerView = viewBinding.ecomRecyclerView;
+
 
         ImageAdapter imageAdapter = new ImageAdapter(this, items, this, recyclerView, 2);
 
@@ -80,16 +81,11 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
     public void onRecyclerViewItemClick(List<imageModel> items, int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        // Set the message show for the Alert time
+
         builder.setMessage("Do you want to add this item to the cart 😀 ?");
-
-        // Set Alert Title
         builder.setTitle("ADD TO CART 🛒");
-
-        // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
         builder.setCancelable(false);
 
-        // Set the positive button with yes name Lambda OnClickListener method is use of DialogInterface interface.
         builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
 
             DBHelper dbHelper = new DBHelper(this);
@@ -108,15 +104,11 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
 
 
 
-        // Set the Negative button with No name Lambda OnClickListener method is use of DialogInterface interface.
-        builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
-            // If user click no then dialog box is canceled.
-            dialog.cancel();
-        });
 
-        // Create the Alert dialog
+        builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> dialog.cancel());
+
+
         AlertDialog alertDialog = builder.create();
-        // Show the Alert Dialog box
         alertDialog.show();
 
 

@@ -2,4 +2,7 @@
     <string name="app_name">ECommerce_App</string>
     <string name="order_btn_menu">Orders</string>
     <string name="hint_search">Search Product Name</string>
+    <string name="text_card_view">Rs</string>
+    <string name="_89_reviews_card_view">89 reviews</string>
+    <string name="verified_card_view">Verified</string>
 </resources>

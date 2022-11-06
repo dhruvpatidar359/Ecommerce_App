@@ -2,80 +2,83 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
-    card_view:cardCornerRadius="10dp"
-    card_view:cardElevation="5dp">
+    card_view:cardCornerRadius="@dimen/_10pxh"
+    card_view:cardElevation="@dimen/_5pxh">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="3dp"
-        card_view:srcCompat="@drawable/ic_baseline_menu_24" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/_3pxh"
+        card_view:srcCompat="@drawable/ic_baseline_menu_24"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/item_product_card_pimage"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:scaleType="centerInside" />
+        android:scaleType="centerInside"
+        tools:ignore="ContentDescription"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp"
-        android:text="Verified"
-        android:textColor="#25E418"
+        android:layout_margin="@dimen/_5pxh"
+        android:paddingStart="@dimen/_2pxh"
+        android:paddingEnd="@dimen/_2pxh"
+        android:text="@string/verified_card_view"
+        android:textColor="@color/green"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginLeft="6dp"
-        android:layout_marginBottom="28dp"
-        android:text="Rs"
+        android:layout_marginStart="@dimen/_6pxh"
+        android:layout_marginBottom="@dimen/_28pxh"
+        android:text="@string/text_card_view"
         android:textColor="@color/red_500" />
 
     <TextView
         android:id="@+id/item_product_card_money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
-        android:layout_marginLeft="25dp"
-        android:layout_marginBottom="28dp"
-        android:text="100"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="@dimen/_25pxh"
+        android:layout_marginBottom="@dimen/_28pxh"
         android:textColor="@color/red_500" />
 
     <TextView
         android:id="@+id/item_product_card_pname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal|left|center_vertical"
-        android:layout_marginLeft="6dp"
-        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom|center_horizontal|start|center_vertical"
+        android:layout_marginStart="@dimen/_6pxh"
+        android:layout_marginBottom="@dimen/_45pxh"
         android:enabled="true"
-        android:textColor="#000000"
-        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sxp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:layout_margin="5dp"
-        android:text="89 reviews" />
+        android:layout_margin="@dimen/_5pxh"
+        android:text="@string/_89_reviews_card_view" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_margin="5dp"
-        card_view:srcCompat="@drawable/ic_baseline_star_24" />
+        android:layout_margin="@dimen/_5pxh"
+        card_view:srcCompat="@drawable/ic_baseline_star_24"
+        tools:ignore="ContentDescription"/>
 
 </androidx.cardview.widget.CardView>

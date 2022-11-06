@@ -5,5 +5,12 @@
     <dimen name="_24pxv">24.0dp</dimen>
     <dimen name="_25pxh">25.0dp</dimen>
     <dimen name="_10pxh">10.0dp</dimen>
+    <dimen name="_3pxh">3.0dp</dimen>
+    <dimen name="_5pxh">5dp</dimen>
+    <dimen name="_2pxh">2dp</dimen>
+    <dimen name="_6pxh">6dp</dimen>
+    <dimen name="_28pxh">28dp</dimen>
+    <dimen name="_45pxh">45dp</dimen>
+    <dimen name="_20sxp">20sp</dimen>
 
 </resources>

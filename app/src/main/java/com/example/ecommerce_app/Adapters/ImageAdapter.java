@@ -3,21 +3,17 @@ package com.example.ecommerce_app.Adapters;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.cardview.widget.CardView;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecommerce_app.database.DBHelper;
 import com.example.ecommerce_app.model.imageModel;
 import com.example.ecommerce_app.R;
 
@@ -25,15 +21,15 @@ import java.util.List;
 
 
 public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
-    public static final int NUMBER_OF_ROWS_AUTO = -1;
+
 
     Context context;
     LayoutInflater layoutInflater;
     RecyclerViewItemClickListeners listener;
-    List<imageModel> items;
+    private final List<imageModel> items;
     RecyclerView recyclerView;
-    int numberOfRows;
-    int rowHeightInPx = 0;
+    private final int mNumberOfRows;
+    private int mRowHeightInPx = 0;
     boolean itemHeightCalculationCompleted = false;
 
     public ImageAdapter(Context context, List<imageModel> items, RecyclerViewItemClickListeners listener, RecyclerView rv, int rows) {
@@ -43,15 +39,16 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         this.listener = listener;
         this.layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.recyclerView = rv;
-        this.numberOfRows = rows;
+        this.mNumberOfRows = rows;
 
-        if (this.numberOfRows > 0) {
+        if (this.mNumberOfRows > 0) {
             this.recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @SuppressLint("NotifyDataSetChanged")
                 @Override
                 public void onGlobalLayout() {
                     if (recyclerView.getMeasuredHeight() > 0) {
                         recyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                        setRowHeightInPx(recyclerView.getMeasuredHeight() / numberOfRows);
+                        setRowHeightInPx(recyclerView.getMeasuredHeight() / mNumberOfRows);
                         itemHeightCalculationCompleted = true;
                         notifyDataSetChanged();
                     }
@@ -64,11 +61,11 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     public int getRowHeightInPx() {
-        return rowHeightInPx;
+        return mRowHeightInPx;
     }
 
-    public void setRowHeightInPx(int rowHeightInPx) {
-        this.rowHeightInPx = rowHeightInPx;
+    public void setRowHeightInPx(int mRowHeightInPx) {
+        this.mRowHeightInPx = mRowHeightInPx;
     }
 
     @Override
@@ -79,8 +76,9 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             return 0;
     }
 
+    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder vh;
         View view = this.layoutInflater.inflate(R.layout.item_product_card, parent, false);
         if (getRowHeightInPx() > 0) {
@@ -95,10 +93,9 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @SuppressLint("DefaultLocale")
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         imageModel page = items.get(position);
 
-        CardView view = ((CardView) ((GeneralViewHolder) holder).getView());
 
         ((GeneralViewHolder) holder).getTitle().setText(page.getImage_name());
         ((GeneralViewHolder) holder).getImg().setImageResource(page.getImage());
@@ -109,7 +106,7 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
 
     @Override
-    public void onViewRecycled(RecyclerView.ViewHolder holder) {
+    public void onViewRecycled(@NonNull RecyclerView.ViewHolder holder) {
         super.onViewRecycled(holder);
     }
 
@@ -120,7 +117,7 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         this.listener.onRecyclerViewItemClick(this.items, position);
     }
 
-    public class GeneralViewHolder extends RecyclerView.ViewHolder {
+    public static class GeneralViewHolder extends RecyclerView.ViewHolder {
 
         View view;
         TextView title;
@@ -145,7 +142,6 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         public TextView getPrice() {
             return price;
         }
-
 
         public TextView getTitle() {
             return title;
