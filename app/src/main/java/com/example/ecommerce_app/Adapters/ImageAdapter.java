@@ -122,8 +122,6 @@ public class ImageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         View view;
         TextView title;
         ImageView img;
-
-
         TextView price;
 
         public GeneralViewHolder(View itemView) {
