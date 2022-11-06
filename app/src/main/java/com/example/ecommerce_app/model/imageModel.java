@@ -1,5 +1,7 @@
 package com.example.ecommerce_app.model;
 
+// Data class
+
 public class imageModel {
 
 

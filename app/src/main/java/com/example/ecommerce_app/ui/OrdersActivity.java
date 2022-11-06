@@ -1,5 +1,7 @@
 package com.example.ecommerce_app.ui;
 
+// This Activity shows the order in the cart
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;

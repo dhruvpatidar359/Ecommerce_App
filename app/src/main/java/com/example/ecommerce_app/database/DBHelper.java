@@ -1,5 +1,6 @@
 package com.example.ecommerce_app.database;
 
+// DataBase for storing the list of orders
 
 import android.content.ContentValues;
 import android.content.Context;

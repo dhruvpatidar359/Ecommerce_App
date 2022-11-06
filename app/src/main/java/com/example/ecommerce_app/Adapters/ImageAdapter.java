@@ -1,5 +1,7 @@
 package com.example.ecommerce_app.Adapters;
 
+// Adapter to use for recycler view
+
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 import android.annotation.SuppressLint;

@@ -1,8 +1,9 @@
 package com.example.ecommerce_app.ui;
 
+// This activity is responsible for the main Ui of the app
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.splashscreen.SplashScreen;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,7 +31,6 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
 
         viewBinding = AcitivtyEcommercehomeBinding.inflate(getLayoutInflater());
@@ -69,7 +69,6 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if (item.getItemId() == R.id.menu_order_btn) {
-            Toast.makeText(this, "Working", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this,OrdersActivity.class);
             startActivity(intent);
 
@@ -96,10 +95,10 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
                 dbHelper.insertFuction(items.get(position).getImage(),items.get(position).getId(),items.get(position).getImage_name());
 
 
-                Toast.makeText(EcommerceHome.this,"Success",Toast.LENGTH_SHORT).show();
+                Toast.makeText(EcommerceHome.this,"Added to Cart",Toast.LENGTH_SHORT).show();
             }
             catch (Exception e){
-                Toast.makeText(EcommerceHome.this, "Error while uploading", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EcommerceHome.this, "Error", Toast.LENGTH_SHORT).show();
             }
 
         });
