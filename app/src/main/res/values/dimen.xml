@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="_14pxh">14.0dp</dimen>
+    <dimen name="_24pxv">24.0dp</dimen>
+    <dimen name="_25pxh">25.0dp</dimen>
+    <dimen name="_10pxh">10.0dp</dimen>
+
+</resources>

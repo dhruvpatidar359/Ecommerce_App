@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.EcommerceHome">
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchViewFrameFour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_25pxh"
+        android:layout_marginTop="@dimen/_24pxv"
+        android:layout_marginEnd="@dimen/_25pxh"
+        android:background="@drawable/rectangle_bg_gray_50_radius_10"
+        android:gravity="center_horizontal"
+        android:theme="@style/searchViewFrameFour"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@android:color/transparent"
+        app:queryHint="@string/hint_search"
+        app:searchIcon="@drawable/img_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+
+        android:id="@+id/ecom_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+
+</LinearLayout>

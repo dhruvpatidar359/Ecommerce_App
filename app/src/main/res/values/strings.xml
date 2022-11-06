@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ECommerce_App</string>
+    <string name="order_btn_menu">Orders</string>
+    <string name="hint_search">Search Product Name</string>
+</resources>
