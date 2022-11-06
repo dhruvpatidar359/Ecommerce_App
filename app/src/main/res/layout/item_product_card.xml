@@ -18,8 +18,8 @@
 
     <ImageView
         android:id="@+id/item_product_card_pimage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:scaleType="centerInside" />
 
