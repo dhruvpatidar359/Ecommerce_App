@@ -2,6 +2,7 @@ package com.example.ecommerce_app.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,6 +30,7 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
 
         viewBinding = AcitivtyEcommercehomeBinding.inflate(getLayoutInflater());
@@ -102,9 +104,6 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
 
         });
 
-
-
-
         builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> dialog.cancel());
 
 
@@ -115,5 +114,7 @@ public class EcommerceHome extends AppCompatActivity  implements ImageAdapter.Re
 
 
     }
+
+
 
 }

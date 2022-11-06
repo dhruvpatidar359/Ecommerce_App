@@ -5,4 +5,5 @@
     <string name="text_card_view">Rs</string>
     <string name="_89_reviews_card_view">89 reviews</string>
     <string name="verified_card_view">Verified</string>
+    <string name="activity_name_manifest">Orders</string>
 </resources>
